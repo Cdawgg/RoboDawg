@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1165.robot.commands;
 
+import org.usfirst.frc.team1165.robot.Robot;
 import org.usfirst.frc.team1165.robot.subsystems.Accelerometer;
 
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
@@ -18,7 +19,7 @@ public class MeasureAccel extends Command {
 	double z = 0;
 	
     public MeasureAccel() {
-        requires(new Accelerometer());
+        requires(Robot.accelerometer);
     }
 
     // Called just before this Command runs the first time
@@ -31,9 +32,9 @@ public class MeasureAccel extends Command {
     	y = accel.getY();
     	z = accel.getZ();
     	
-    	SmartDashboard.putDouble("Accelerometer X", x);
-    	SmartDashboard.putDouble("Accelerometer Y", y);
-    	SmartDashboard.putDouble("Accelerometer Z", z);
+    	SmartDashboard.putDouble("Acc X", x);
+    	SmartDashboard.putDouble("Acc Y", y);
+    	SmartDashboard.putDouble("Acc Z", z);
     	
     }
 
